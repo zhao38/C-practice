@@ -69,7 +69,7 @@ void HANGZUIJIAN()
     for(int j=0;j<n&&rank<m;j++)
     {
         int pivotrow=rank;
-        while(pivotrow<m&&fabs(a[pivotrow][j])>1e-10)
+        while(pivotrow<m&&a[pivotrow][j]!=0)
         pivotrow++;
         if(pivotrow==m)
         continue;
@@ -80,7 +80,7 @@ void HANGZUIJIAN()
         
         for(int i=rank+1;i<m;i++)
         {
-            if(fabs(a[i][j])<1e-10)
+            if(a[i][j]==0)
             continue;
             int x=a[i][j]/a[rank][j];
             ADDROW(a[rank],a[i],n,-x);
